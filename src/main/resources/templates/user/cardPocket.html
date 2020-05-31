@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico" />
+    <title>卡包</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLBar, 0); }, false);
+    function hideURLBar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-awesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/user/userMember.css"/>
+
+    <!-- //for-mobile-apps -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- pop-up -->
+    <link href="/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //pop-up -->
+    <link href="/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/css/zoomslider.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/user/modernizr-2.6.2.min.js"></script>
+    <!--/web-fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+
+</head>
+<body>
+<div id="demo-1" class="banner-inner">
+    <div class="banner-inner-dott">
+<div class="header-w3-agileits" id="home">
+    <div class="inner-header-agile part2">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a  href="/user/home"><span>M</span>ovies <span>P</span>ro</a></h1>
+            </div>
+            <!-- navbar-header -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/user/home">首页</a></li>
+                    <li><a href="/user/movie">电影列表</a></li>
+                    <li><a href="/user/ticket">我的电影票</a></li>
+                    <li><a href="/user/cardPocket">卡包</a></li>
+                    <li><a href="/user/consumeRecord">订单记录</a></li>
+                    <li><a href="/user/rechargeRecord">充值记录</a></li>
+                    <li><a href="/logout">登出</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </nav>
+    </div>
+</div>
+    </div>
+</div>
+<div class="content-container">
+    <!--非会员-->
+    <div class="card col-md-8 col-md-offset-2" id="nonmember-card" style="display: none;">
+        <div class="header">
+            <div class="title">会员卡</div>
+            <div class="state">非会员</div>
+        </div>
+        <div class="line">
+            <div>成为VIP会员</div>
+            <hr/>
+        </div>
+        <div class="info" id="toBuy">
+            <div class="price"><b id="member-buy-price"></b>20元/张</div>
+            <div id="member-buy-description" class="description" style="display: flex"></div>
+            <button onclick="buyClick()">立即购买</button>
+        </div>
+    </div>
+
+    <!--会员-->
+    <div class="card col-md-8 col-md-offset-2" id="member-card" style="display: none;">
+        <div class="header">
+            <div class="title">会员卡</div>
+            <div class="state">VIP</div>
+        </div>
+        <div class="line">
+            <div>会员信息</div>
+            <hr/>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div class="line">
+                    <div id="member-id0"><b>会员卡号：</b></div>
+                    <div id="member-id"></div>
+                </div>
+<!--                <div class="line">-->
+<!--                    <div id="member-joinDate"><b>入会日期：</b></div>-->
+<!--&lt;!&ndash;                    <div id="member-joinDate"></div>&ndash;&gt;-->
+<!--                </div>-->
+                <div class="line">
+                    <div  id="member-balance0"><b>余额：</b></div>
+                    <div id="member-balance"></div>
+                </div>
+                <hr/>
+                <div class="line">
+                    <div id="member-description0"><b>充值优惠：</b></div>
+                    <div id="member-description"></div>
+                </div>
+            </div>
+            <button onclick="chargeClick()">立即充值</button>
+        </div>
+    </div>
+
+    <!--优惠券-->
+    <div class="card col-md-8 col-md-offset-2">
+        <div class="header">
+            <div class="title">优惠券</div>
+        </div>
+        <div id="coupon-list"></div>
+    </div>
+</div>
+
+<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">购买会员卡</h4>
+            </div>
+            <div class="modal-body" id="userMember-form">
+                <div class="form-group">
+                    <label for="userMember-cardNum"><span class="error-text">*</span>银行卡号</label>
+                    <input class="form-control" id="userMember-cardNum" placeholder="请输入银行卡号">
+                    <p id="userMember-cardNum-error" class="notice">银行卡号不能为空</p>
+                </div>
+                <div class="form-group">
+                    <label for="userMember-cardPwd"><span class="error-text">*</span>密码</label>
+                    <input type="password" class="form-control" id="userMember-cardPwd" placeholder="请输入密码">
+                    <p id="userMember-cardPwd-error" class="notice">密码不能为空</p>
+                </div>
+                <div class="form-group" id="userMember-amount-group">
+                    <label for="userMember-amount"><span class="error-text">*</span>金额</label>
+                    <input type="number" class="form-control" id="userMember-amount" placeholder="请输入充值金额">
+                    <p id="userMember-amount-error" class="notice">充值金额需要大于0元</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="confirmCommit()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/user/jquery-1.11.1.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/request.js"></script>
+<script src="/js/user/cardPocket.js"></script>
+</body>
+</html>

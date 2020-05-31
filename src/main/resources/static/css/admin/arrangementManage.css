@@ -1,0 +1,43 @@
+ul{
+    padding: 0;
+}
+
+.arrangement-container {
+    display: flex;
+    padding: 0 20px;
+}
+
+.arrangement-time-line {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.arrangement-item-line {
+    height: 960px;
+    width: 150px;
+    border-left: 1px solid #ccc;
+    position: relative;
+}
+
+.arrangement-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+}
+
+.arrangement-date-container {
+    padding-left: 95px;
+    height: 40px;
+    line-height: 30px;
+    display: flex;
+}
+
+.arrangement-date {
+    width: 135px;
+    text-align: center;
+}

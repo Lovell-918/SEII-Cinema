@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico" />
+    <title>电影详情</title>
+
+    <!-- Bootstrap -->
+    <link href="/webjars/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/webjars/gentelella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/webjars/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/webjars/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="/webjars/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="/webjars/gentelella/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="/webjars/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/webjars/gentelella/build/css/custom.min.css" rel="stylesheet">
+    <!-- Personal Theme Style -->
+    <link href="/css/admin/movieDetail.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/common.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!--            侧边栏-->
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="/manage/movieAll" class="site_title"><i class="fa fa-paw"></i> <span>队名不能为空！</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                <div class="profile clearfix">
+                    <div class="profile_pic">
+                        <img src="/images/defaultAvatar.jpg" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <span>Welcome,</span>
+                        <h2>John Doe</h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
+
+                <br />
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <h3>General</h3>
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa fa-toggle-right"></i> 电影管理 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="/manage/movieAll">查看电影</a></li>
+                                    <li><a href="/manage/movieAdd">上架电影</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-home"></i> 影院管理 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li id="hall"><a href="/admin/hall">影厅管理</a></li>
+                                    <li><a href="/manage/arrangement">排片管理</a></li>
+                                    <li><a href="/manage/statistics">影院统计</a></li>
+                                    <li id="staff"><a href="/root/staff">员工管理</a></li>
+                                </ul>
+                            </li>
+                            <li id="strategy"><a><i class="fa fa-edit"></i> 策略管理 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="/admin/activity">优惠活动管理</a></li>
+                                    <li><a href="/admin/vipStrategy">会员充值策略</a></li>
+                                    <li><a href="/admin/refundStrategy">退票策略</a></li>
+                                </ul>
+                            </li>
+                            <li id="coupon"><a><i class="fa fa-clone"></i> 优惠发放 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="/admin/handout/coupon">赠送优惠券</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- /sidebar menu -->
+
+                <!-- /menu footer buttons -->
+                <div class="sidebar-footer hidden-small">
+                    <a data-toggle="tooltip" data-placement="top" title="Settings">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Lock">
+                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="/logout">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!-- /menu footer buttons -->
+            </div>
+        </div>
+
+        <!--            顶部导航-->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="/images/defaultAvatar.jpg" alt="">
+                                <span class="username">John Doe</span>
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--            主内容-->
+        <div class="right_col" role="main">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="dashboard_graph">
+                        <div class="content-header">
+                            <img id="movie-img">
+                            <div class="movie-basic-info">
+                                <div><span class="title" id="movie-name"></span></div>
+                                <div style="margin-top: 20px;"><span>简 介 ：</span><span id="movie-description" class="gray-text"></span></div>
+                                <div><span>上 映 ：</span><span id="movie-startDate"></span></div>
+                                <div><span>类 型 ：</span><span id="movie-type"></span></div>
+                                <div><span>地 区 ：</span><span id="movie-country"></span></div>
+                                <div><span>语 言 ：</span><span id="movie-language"></span></div>
+                                <div><span>导 演 ：</span><span id="movie-director"></span></div>
+                                <div><span>主 演 ：</span><span id="movie-starring"></span></div>
+                                <div><span>编 剧 ：</span><span id="movie-writer"></span></div>
+                                <div><span>片 长 ：</span><span id="movie-duration"></span></div>
+                                <div class="movie-operations">
+                                    <button type="button" class="btn btn-primary" id="modify-btn" data-backdrop="static" data-toggle="modal" data-target="#movieEditModal"><span>修 改</span></button>
+                                    <button type="button" class="btn btn-danger" id="delete-btn"><span>下 架</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="statistic-container card">
+                            <div id="like-date-chart" style="width: 800px;height:500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="movieEditModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="movieEditModalLabel">修改电影</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-name-input"><span class="error-text">*</span>电影名称</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-name-input" placeholder="请输入电影名称">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-date-input"><span class="error-text">*</span>上映时间</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="movie-edit-date-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-img-input"><span class="error-text">*</span>电影海报</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-img-input" placeholder="请输入电影海报url">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-description-input">剧情介绍</label>
+                                    <div class="col-sm-10">
+                                        <textarea rows="3" class="form-control" id="movie-edit-description-input" placeholder="请输入剧情介绍"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-type-input">电影类型</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-type-input" placeholder="请输入电影类型">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-duration-input"><span class="error-text">*</span>片长(分钟)</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" min="1" class="form-control" id="movie-edit-duration-input" placeholder="请输入电影片长">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-country-input">国家/地区</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-country-input" placeholder="请输入电影国家/地区">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-language-input">电影语言</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-language-input" placeholder="请输入电影语言">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-director-input">电影导演</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-director-input" placeholder="请输入电影导演">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-starring-input">电影主演</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-starring-input" placeholder="请输入电影主演">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="movie-edit-writer-input">电影编剧</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="movie-edit-writer-input" placeholder="请输入电影编剧">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" id="movie-edit-form-btn">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!--        尾注-->
+        <footer>
+            <div class="pull-right">
+                Team Name Cannot Be Empty Organized by <a href="http://seec.yangshan.tech/">seec</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="/webjars/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/webjars/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="/webjars/gentelella/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="/webjars/gentelella/vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="/webjars/gentelella/vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="/webjars/gentelella/vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="/webjars/gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- iCheck -->
+<script src="/webjars/gentelella/vendors/iCheck/icheck.min.js"></script>
+<!-- Skycons -->
+<script src="/webjars/gentelella/vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="/webjars/gentelella/vendors/Flot/jquery.flot.js"></script>
+<script src="/webjars/gentelella/vendors/Flot/jquery.flot.pie.js"></script>
+<script src="/webjars/gentelella/vendors/Flot/jquery.flot.time.js"></script>
+<script src="/webjars/gentelella/vendors/Flot/jquery.flot.stack.js"></script>
+<script src="/webjars/gentelella/vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="/webjars/gentelella/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="/webjars/gentelella/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="/webjars/gentelella/vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="/webjars/gentelella/vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="/webjars/gentelella/vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="/webjars/gentelella/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="/webjars/gentelella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="/webjars/gentelella/vendors/moment/min/moment.min.js"></script>
+<script src="/webjars/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="/webjars/gentelella/build/js/custom.min.js"></script>
+<script src="/js/echarts.js"></script>
+<script src="/js/request.js"></script>
+<script src="/js/admin/common.js"></script>
+<script src="/js/admin/movieDetail.js"></script>
+</body>
+</html>

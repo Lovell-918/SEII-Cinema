@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico" />
+    <title>电影详情</title>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- fonts-awesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/admin/movieDetail.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/user/viewMovieDetail.css"/>
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="" />
+    <script src="/js/user/jquery-1.11.1.min.js"></script>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- pop-up -->
+    <link href="/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //pop-up -->
+    <link href="/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/css/zoomslider.css" />
+    <link rel="stylesheet" type="text/css" href="/css/table-style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/basictable.css" />
+    <!-- list-css -->
+    <link rel="stylesheet" href="/css/list.css" type="text/css" media="all" />
+    <!-- //list-css -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/user/modernizr-2.6.2.min.js"></script>
+    <!--/web-fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!--<div class="nav-top-container">-->
+<!--    <div class="nav-logo title">NJU-Se电影购票系统</div>-->
+<!--    <ul class="nav nav-pills">-->
+<!--        <li role="presentation"><a href="/user/home">首页</a></li>-->
+<!--        <li role="presentation" class="active"><a href="/user/movie">电影</a></li>-->
+<!--    </ul>-->
+<!--    <div class="btn-group">-->
+<!--        <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"-->
+<!--                aria-expanded="false">-->
+<!--            <img class="avatar-sm" src="/images/defaultAvatar.jpg"/>-->
+<!--            <span class="gray-text" style="vertical-align: middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="caret"></span></span>-->
+<!--        </button>-->
+<!--        <ul class="dropdown-menu">-->
+<!--            <li><a href="#">首页</a></li>-->
+<!--            <li><a href="/user/movie">电影列表</a></li>-->
+<!--            <li><a href="/user/ticket">我的电影票</a></li>-->
+<!--            <li><a href="/user/cardPocket">卡包</a></li>-->
+<!--            <li><a href="/user/consumeRecord">订单记录</a></li>-->
+<!--            <li><a href="/user/rechargeRecord">充值记录</a></li>-->
+<!--            <li><a href="/logout">登出</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+<div id="demo-1" class="banner-inner">
+    <div class="banner-inner-dott">
+        <!--/header-w3l-->
+        <div class="header-w3-agileits" id="home">
+            <div class="inner-header-agile part2">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a  href="/user/home"><span>M</span>ovies <span>P</span>ro</a></h1>
+                    </div>
+                    <!-- navbar-header -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/user/home">首页</a></li>
+                            <li><a href="/user/movie">电影列表</a></li>
+                            <li><a href="/user/ticket">我的电影票</a></li>
+                            <li><a href="/user/cardPocket">卡包</a></li>
+                            <li><a href="/user/consumeRecord">订单记录</a></li>
+                            <li><a href="/user/rechargeRecord">充值记录</a></li>
+                            <li><a href="/logout">登出</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </nav>
+            </div>
+        </div>
+        <!--//header-w3l-->
+    </div>
+</div>
+
+<div class="content-container">
+    <div class="content-header">
+        <div id="movie-img"></div>
+<!--        <img id="movie-img">-->
+        <div class="movie-basic-info">
+            <div class="firstLine"><span class="title primary-text" id="movie-name"></span></div>
+            <div style="margin-top: 20px;"><span>简 介 ：</span><span id="movie-description" class="gray-text"></span>
+            </div>
+            <div><span>上 映 ：</span><span id="movie-startDate"></span></div>
+            <div><span>类 型 ：</span><span id="movie-type"></span></div>
+            <div><span>地 区 ：</span><span id="movie-country"></span></div>
+            <div><span>语 言 ：</span><span id="movie-language"></span></div>
+            <div><span>导 演 ：</span><span id="movie-director"></span></div>
+            <div><span>主 演 ：</span><span id="movie-starring"></span></div>
+            <div><span>编 剧 ：</span><span id="movie-writer"></span></div>
+            <div class="movie-operations">
+                <button type="button" class="btn btn-primary" id="like-btn"><i class='icon-heart'></i><span> 想 看 </span>
+                </button>
+                <button type="button" class="btn btn-primary" id="unlike-btn" style="display: none"><i class='icon-heart error-text'></i><span> 已想看 </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="session-container">
+        <h2 id="none-hint" style="display: none;text-align: center">暂无排片</h2>
+        <div id="schedule" style="display: none;">
+            <ul class="nav nav-tabs" id="schedule-date">
+            </ul>
+            <div class="table-wrapper">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>放映开始时间</th>
+                        <th>放映结束时间</th>
+                        <th>放映厅</th>
+                        <th>票价（元）</th>
+                        <th>选座购票</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="schedule-body">
+                    </tbody>
+                </table>
+                <h4 id="date-none-hint" style="display: none;">暂无排片</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/request.js"></script>
+<script src="/js/user/viewMovieDetail.js"></script>
+</body>
+</html>

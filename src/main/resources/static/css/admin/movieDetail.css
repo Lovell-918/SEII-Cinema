@@ -1,0 +1,47 @@
+.content-header {
+    display: flex;
+}
+
+.movie-basic-info {
+    flex: 1;
+    padding: 0 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.movie-operations {
+    margin-top: auto;
+}
+
+#movie-img {
+    height: 400px;
+    width: 300px;
+}
+
+#movie-description {
+    max-height: 80px;
+    min-height: 40px;
+}
+
+.session-container {
+    margin: 30px 0 30px;
+    background-color: whitesmoke;
+}
+
+.statistic-container {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+/*#movie-description{*/
+/*    max-height: 80px;*/
+/*    min-height: 40px;*/
+/*    overflow: hidden;*/
+/*    text-overflow: ellipsis;*/
+/*    display:-webkit-box;*/
+/*    -webkit-box-orient:vertical;*/
+/*    -webkit-line-clamp:3;*/
+/*}*/

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico" />
+    <title>首页</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLBar, 0); }, false);
+    function hideURLBar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- pop-up -->
+    <link href="/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //pop-up -->
+    <link href="/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/css/zoomslider.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/user/home.css" />
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/user/modernizr-2.6.2.min.js"></script>
+    <!--/web-fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+</head>
+<body>
+<!--/main-header-->
+<!--/banner-section-->
+<div id="demo-1" data-zs-src='["/images/2.jpg", "/images/1.jpg", "/images/3.jpg","/images/4.jpg"]' data-zs-overlay="dots">
+    <div class="demo-inner-content">
+        <!--/header-w3l-->
+        <div class="header-w3-agileits" id="home">
+            <div class="inner-header-agile">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a  href="/user/home"><span>M</span>ovies <span>P</span>ro</a></h1>
+                    </div>
+                    <!-- navbar-header -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">首页</a></li>
+                            <li><a href="/user/movie">电影列表</a></li>
+                            <li><a href="/user/ticket">我的电影票</a></li>
+                            <li><a href="/user/cardPocket">卡包</a></li>
+                            <li><a href="/user/consumeRecord">订单记录</a></li>
+                            <li><a href="/user/rechargeRecord">充值记录</a></li>
+                            <li><a href="/logout">登出</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </nav>
+                <div class="w3ls_search">
+                    <div class="cd-main-header">
+                        <ul class="cd-header-buttons">
+                            <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                        </ul> <!-- cd-header-buttons -->
+                    </div>
+                    <div id="cd-search" class="cd-search">
+                        <input class="search" type="text" placeholder="Search..." oninput="searchMovie()">
+                        <div class="search-result" style="background: rgba(0, 0, 0, 0.75);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//header-w3l-->
+        <!--/banner-info-->
+        <div class="baner-info">
+            <h3>Latest <span>On</span>Line <span>Mo</span>vies</h3>
+            <h4>Team Name Cannot Be Empty.</h4>
+            <a class="w3_play_icon1" href="#small-dialog1">
+                Watch Trailer
+            </a>
+        </div>
+        <!--/banner-ingo-->
+    </div>
+</div>
+<!--/banner-section-->
+<!--//main-header-->
+<!--/banner-bottom-->
+<!--//banner-bottom-->
+<!-- Modal1 -->
+<!--/content-inner-section-->
+<div class="w3_content_agilleinfo_inner">
+    <div class="agile_featured_movies">
+        <!--/agileinfo_tabs-->
+        <div class="agileinfo_tabs">
+            <!--/tab-section-->
+            <div id="horizontalTab">
+                <ul class="resp-tabs-list">
+                    <li>最 新 上 架</li>
+                    <li>票 房 最 高</li>
+                    <li>最 多 想 看</li>
+                </ul>
+                <div class="resp-tabs-container">
+                    <div class="tab1">
+                        <div class="tab_movies_agileinfo">
+                            <div class="w3_agile_featured_movies">
+                                <div class="col-md-5 video_agile_player">
+                                    <div class="video-grid-single-page-agileits">
+                                        <div data-video="f2Z65fobH2I" id="video"></div>
+                                        <div class="player-text" id="newest-movie-info"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 wthree_agile-movies_list" id="newest-movie-other"></div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="cleafix"></div>
+                        </div>
+                    </div>
+                    <div class="tab2">
+                        <div class="tab_movies_agileinfo">
+                            <div class="w3_agile_featured_movies">
+                                <div class="col-md-5 video_agile_player">
+                                    <div class="video-grid-single-page-agileits">
+                                        <div data-video="fNKUgX8PhMA" id="video1"></div>
+                                        <div class="player-text" id="highest-movie-info"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 wthree_agile-movies_list" id="highest-movie-other"></div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="cleafix"></div>
+                        </div>
+                    </div>
+                    <div class="tab3">
+                        <div class="tab_movies_agileinfo">
+                            <div class="w3_agile_featured_movies">
+                                <div class="col-md-5 video_agile_player">
+                                    <div class="video-grid-single-page-agileits">
+                                        <div data-video="BXEZFd0RT5Y" id="video2"></div>
+                                        <div class="player-text" id="most-movie-info"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 wthree_agile-movies_list" id="most-movie-other"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="cleafix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//tab-section-->
+        <h3 class="agile_w3_title"> 最新 <span>电影</span></h3>
+        <!--/movies-->
+        <div class="w3_agile_latest_movies">
+            <div id="owl-demo" class="owl-carousel owl-theme"></div>
+        </div>
+        <!--//movies-->
+        <h3 class="agile_w3_title"> 最高热度 <span>电影</span> </h3>
+        <!--/requested-movies-->
+        <div class="wthree_agile-requested-movies" id="slide-most-box">
+
+        </div>
+        <div class="clearfix"></div>
+        <!--//requested-movies-->
+        <!--/top-movies-->
+        <h3 class="agile_w3_title"> 最多想看 <span>电影</span> </h3>
+        <div class="top_movies">
+            <div class="tab_movies_agileinfo">
+                <div class="w3_agile_featured_movies two">
+                    <div class="col-md-7 wthree_agile-movies_list second-top" id="second-top-movies">
+                    </div>
+                    <div class="col-md-5 video_agile_player second-top">
+                        <div class="video-grid-single-page-agileits">
+                            <div data-video="BXEZFd0RT5Y" id="video3">
+                                <div id="top-movie-image"></div>
+                            </div>
+                            <div class="player-text two" id="top-movie-info">
+                            </div>
+                        </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="cleafix"></div>
+            </div>
+        </div>
+        </div>
+        <!--//top-movies-->
+    </div>
+</div>
+<div class="clearfix"></div>
+<!--footer-->
+<div class="w3agile_footer_copy">
+    <p>Copyright &copy; 2018.Team Name Cannot Be Empty Organized by <a href="http://seec.yangshan.tech/">seec</a></p>
+</div>
+<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+<script src="/js/user/jquery-1.11.1.min.js"></script>
+<!-- Dropdown-Menu-JavaScript -->
+<script>
+    $(document).ready(function(){
+        $(".dropdown").hover(
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
+<!-- //Dropdown-Menu-JavaScript -->
+
+
+<script type="text/javascript" src="/js/user/jquery.zoomslider.min.js"></script>
+<!-- search-jQuery -->
+<script src="/js/user/main.js"></script>
+
+<!-- pop-up-box -->
+<script src="/js/user/jquery.magnific-popup.js" type="text/javascript"></script>
+<!--pop-up-box-->
+<div id="small-dialog1" class="mfp-hide">
+    <iframe src="//player.bilibili.com/player.html?aid=18736140&cid=30559251&page=1" allowfullscreen="true"> </iframe>
+</div>
+<div id="small-dialog2" class="mfp-hide">
+    <iframe src=""></iframe>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
+            type: 'inline',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
+
+    });
+</script>
+<script src="/js/user/easy-responsive-tabs.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script>
+<link href="/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+<script src="/js/user/owl.carousel.js"></script>
+
+<!--/script-->
+<script type="text/javascript" src="/js/user/move-top.js"></script>
+<script type="text/javascript" src="/js/user/easing.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+        var defaults = {
+              containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+         };
+        */
+        $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+</script>
+<!--end-smooth-scrolling-->
+<script src="/js/bootstrap.js"></script>
+<script src="/js/request.js"></script>
+<script src="/js/user/home.js"></script>
+
+</body>
+</html>

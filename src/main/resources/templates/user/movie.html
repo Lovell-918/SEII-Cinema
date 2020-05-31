@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico" />
+    <title>电影列表</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="" />
+    <script src="/js/user/jquery-1.11.1.min.js"></script>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- pop-up -->
+    <link href="/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //pop-up -->
+    <link href="/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/css/zoomslider.css" />
+    <link rel="stylesheet" type="text/css" href="/css/table-style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/basictable.css" />
+    <link rel="stylesheet" type="text/css" href="/css/user/movie.css" />
+    <!-- list-css -->
+    <link rel="stylesheet" href="/css/list.css" type="text/css" media="all" />
+    <!-- //list-css -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/user/modernizr-2.6.2.min.js"></script>
+    <!--/web-fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+    <!--pinyin-->
+    <script src="/js/user/Convert_Pinyin.js"></script>
+</head>
+<body>
+<!--/main-header-->
+<!--/banner-section-->
+<div id="demo-1" class="banner-inner">
+    <div class="banner-inner-dott">
+        <!--/header-w3l-->
+        <div class="header-w3-agileits" id="home">
+            <div class="inner-header-agile part2">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a  href="/user/home"><span>M</span>ovies <span>P</span>ro</a></h1>
+                    </div>
+                    <!-- navbar-header -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/user/home">首页</a></li>
+                            <li><a href="/user/movie">电影列表</a></li>
+                            <li><a href="/user/ticket">我的电影票</a></li>
+                            <li><a href="/user/cardPocket">卡包</a></li>
+                            <li><a href="/user/consumeRecord">订单记录</a></li>
+                            <li><a href="/user/rechargeRecord">充值记录</a></li>
+                            <li><a href="/logout">登出</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </nav>
+            </div>
+        </div>
+        <!--//header-w3l-->
+    </div>
+</div>
+<!--/banner-section-->
+<!--//main-header-->
+<!-- breadcrumb -->
+<div class="w3_breadcrumb">
+    <div class="breadcrumb-inner">
+        <ul>
+            <li><a href="/user/home">Home</a><i>//</i></li>
+            <li>List</li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumb -->
+<!--/content-inner-section-->
+<div class="w3_content_agilleinfo_inner">
+    <div class="agile_featured_movies">
+        <div class="inner-agile-w3l-part-head">
+            <h3 class="w3l-inner-h-title">电影列表</h3>
+        </div>
+        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a onclick="changeTable('all')" id="all" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">ALL</a></li>
+                <li role="presentation"><a onclick="changeTable('A')" role="tab" id="a" data-toggle="tab" aria-controls="a">A</a></li>
+                <li role="presentation"><a onclick="changeTable('B')" role="tab" id="b" data-toggle="tab" aria-controls="b">B</a></li>
+                <li role="presentation"><a onclick="changeTable('C')" role="tab" id="c" data-toggle="tab" aria-controls="c">C</a></li>
+                <li role="presentation"><a onclick="changeTable('D')" role="tab" id="d" data-toggle="tab" aria-controls="d">D</a></li>
+                <li role="presentation"><a onclick="changeTable('E')" role="tab" id="e" data-toggle="tab" aria-controls="e">E</a></li>
+                <li role="presentation"><a onclick="changeTable('F')" role="tab" id="f" data-toggle="tab" aria-controls="f">F</a></li>
+                <li role="presentation"><a onclick="changeTable('G')" role="tab" id="g" data-toggle="tab" aria-controls="g">G</a></li>
+                <li role="presentation"><a onclick="changeTable('H')" role="tab" id="h" data-toggle="tab" aria-controls="h">H</a></li>
+                <li role="presentation"><a onclick="changeTable('I')" role="tab" id="i" data-toggle="tab" aria-controls="i">I</a></li>
+                <li role="presentation"><a onclick="changeTable('J')" role="tab" id="j" data-toggle="tab" aria-controls="j">J</a></li>
+                <li role="presentation"><a onclick="changeTable('K')" role="tab" id="k" data-toggle="tab" aria-controls="k">K</a></li>
+                <li role="presentation"><a onclick="changeTable('L')" role="tab" id="l" data-toggle="tab" aria-controls="l">L</a></li>
+                <li role="presentation"><a onclick="changeTable('M')" role="tab" id="m" data-toggle="tab" aria-controls="m">M</a></li>
+                <li role="presentation"><a onclick="changeTable('N')" role="tab" id="n" data-toggle="tab" aria-controls="n">N</a></li>
+                <li role="presentation"><a onclick="changeTable('O')" role="tab" id="o" data-toggle="tab" aria-controls="o">O</a></li>
+                <li role="presentation"><a onclick="changeTable('P')" role="tab" id="p" data-toggle="tab" aria-controls="p">P</a></li>
+                <li role="presentation"><a onclick="changeTable('Q')" role="tab" id="q" data-toggle="tab" aria-controls="q">Q</a></li>
+                <li role="presentation"><a onclick="changeTable('R')" role="tab" id="r" data-toggle="tab" aria-controls="r">R</a></li>
+                <li role="presentation"><a onclick="changeTable('S')" role="tab" id="s" data-toggle="tab" aria-controls="s">S</a></li>
+                <li role="presentation"><a onclick="changeTable('T')" role="tab" id="t" data-toggle="tab" aria-controls="t">T</a></li>
+                <li role="presentation"><a onclick="changeTable('U')" role="tab" id="u" data-toggle="tab" aria-controls="u">U</a></li>
+                <li role="presentation"><a onclick="changeTable('V')" role="tab" id="v" data-toggle="tab" aria-controls="v">V</a></li>
+                <li role="presentation"><a onclick="changeTable('W')" role="tab" id="w" data-toggle="tab" aria-controls="w">W</a></li>
+                <li role="presentation"><a onclick="changeTable('X')" role="tab" id="x" data-toggle="tab" aria-controls="x">X</a></li>
+                <li role="presentation"><a onclick="changeTable('Y')" role="tab" id="y-" data-toggle="tab" aria-controls="y">Y</a></li>
+                <li role="presentation"><a onclick="changeTable('Z')" role="tab" id="z" data-toggle="tab" aria-controls="z">Z</a></li>
+            </ul>
+            <div class="w3ls-news-result">
+                <h4>搜索结果 : <span id="num-of-all-movies1"></span></h4>
+            </div>
+            <table id="table-breakpoint">
+                <thead>
+                <tr>
+                    <th>电影名称</th>
+                    <th>状态</th>
+                    <th>风格</th>
+                    <th>上映日期</th>
+                    <th>想看人数</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="noResult" style="display: none;text-align: center;padding: 20px 0 20px">暂无电影</div>
+        </div>
+    </div>
+</div>
+<!--//content-inner-section-->
+<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+<!-- Dropdown-Menu-JavaScript -->
+<script>
+    $(document).ready(function(){
+        $(".dropdown").hover(
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
+<!-- //Dropdown-Menu-JavaScript -->
+<!-- search-jQuery -->
+<script src="/js/user/main.js"></script>
+
+
+<!-- pop-up-box -->
+<script src="/js/user/jquery.magnific-popup.js" type="text/javascript"></script>
+<!--//pop-up-box -->
+
+<div id="small-dialog1" class="mfp-hide">
+    <iframe src=""></iframe>
+</div>
+<div id="small-dialog2" class="mfp-hide">
+    <iframe src=""></iframe>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
+            type: 'inline',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
+
+    });
+</script>
+<script src="/js/user/easy-responsive-tabs.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script>
+<!-- tables -->
+<script type="text/javascript" src="/js/user/jquery.basictable.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#table').basictable();
+
+        $('#table-breakpoint').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint1').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint2').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint3').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint4').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint5').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint6').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint7').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint8').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint9').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint10').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint11').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint12').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint13').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint14').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint15').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint16').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint17').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint18').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint19').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint20').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint21').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint22').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint23').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint24').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint25').basictable({
+            breakpoint: 768
+        });
+        $('#table-breakpoint26').basictable({
+            breakpoint: 768
+        });
+    });
+</script>
+<!-- //tables -->
+
+
+<!--/script-->
+<script type="text/javascript" src="/js/user/move-top.js"></script>
+<script type="text/javascript" src="/js/user/easing.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+        var defaults = {
+              containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+         };
+        */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<!--end-smooth-scrolling-->
+<script src="/js/bootstrap.js"></script>
+<script src="/js/request.js"></script>
+<script src="/js/user/movie.js"></script>
+</body>
+</html>
